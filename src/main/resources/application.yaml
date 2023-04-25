@@ -11,4 +11,3 @@ spring:
     url: jdbc:mysql://localhost:3306/setterMethod?serverTimezone=Asia/Seoul
     username: root
     password: 'xcz119'
-    data: classpath:/data.sql

@@ -1,4 +1,7 @@
 package springboot.setterMethod.repository;
 
-public class UserRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import springboot.setterMethod.entity.UserEntity;
+
+public interface UserRepository extends JpaRepository<UserEntity, Long>{
 }

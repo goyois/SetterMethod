@@ -11,10 +11,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * 1. 생성자 사용
+ * 2. 빌더 패턴 사용
+ * 3. 스태틱 메서드 사용
+ */
+
+
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
+//@Setter
 @Entity
 public class UserEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

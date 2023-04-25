@@ -5,10 +5,11 @@ import org.springframework.stereotype.Component;
 import springboot.setterMethod.dto.ReqDto;
 import springboot.setterMethod.dto.ResDto;
 import springboot.setterMethod.entity.UserEntity;
+import springboot.setterMethod.entity.UserEntity.UserEntityBuilder;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-25T17:09:03+0900",
+    date = "2023-04-25T17:21:02+0900",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.18 (Azul Systems, Inc.)"
 )
 @Component
@@ -20,14 +21,14 @@ public class UserMapperImpl implements UserMapper {
             return null;
         }
 
-        UserEntity userEntity = new UserEntity();
+        UserEntityBuilder userEntity = UserEntity.builder();
 
-        userEntity.setName( reqDto.getName() );
-        userEntity.setEmail( reqDto.getEmail() );
-        userEntity.setPassword( reqDto.getPassword() );
-        userEntity.setAge( reqDto.getAge() );
+        userEntity.name( reqDto.getName() );
+        userEntity.email( reqDto.getEmail() );
+        userEntity.password( reqDto.getPassword() );
+        userEntity.age( reqDto.getAge() );
 
-        return userEntity;
+        return userEntity.build();
     }
 
     @Override

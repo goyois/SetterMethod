@@ -1,10 +1,7 @@
 package springboot.setterMethod.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +17,6 @@ import javax.persistence.Id;
 
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 //@Setter
 @Entity
@@ -31,4 +27,14 @@ public class UserEntity {
     private String email;
     private String password;
     private int age;
+
+
+    @Builder
+    public UserEntity(Long userId, String name, String email, String password, int age) {
+        this.userId = userId;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.age = age;
+    }
 }

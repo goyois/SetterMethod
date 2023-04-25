@@ -13,10 +13,17 @@ public class UserService {
 
 
     public UserEntity createUser(UserEntity userEntity) {
-        userEntity.setName("김주원");
-        userEntity.setEmail("bau12288@gmail.com");
-        userEntity.setAge(29);
-        userEntity.setPassword("xcz119");
+//        userEntity.setName("김주원");  기존 Setter 애너테이션 사용
+//        userEntity.setEmail("bau12288@gmail.com");
+//        userEntity.setAge(29);
+//        userEntity.setPassword("xcz119");
+
+        UserEntity.builder()
+                .name(userEntity.getName())
+                .age(userEntity.getAge())
+                .email(userEntity.getEmail())
+                .password(userEntity.getPassword())
+                .build();
         return userRepository.save(userEntity);
     }
 }

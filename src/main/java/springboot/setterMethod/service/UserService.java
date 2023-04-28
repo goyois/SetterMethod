@@ -13,12 +13,7 @@ public class UserService {
 
 
     public UserEntity createUser(UserEntity userEntity) {
-//        userEntity.setName("김주원");  기존 Setter 애너테이션 사용
-//        userEntity.setEmail("bau12288@gmail.com");
-//        userEntity.setAge(29);
-//        userEntity.setPassword("xcz119");
-
-        UserEntity.builder()
+        UserEntity.builder() //비즈니스 로직에서 빌더태펀으로 파싱된 값을 가져와 저장
                 .name(userEntity.getName())
                 .age(userEntity.getAge())
                 .email(userEntity.getEmail())
